@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ExFinal.model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,5 +12,12 @@ namespace ExFinal.models
         public BasePizza BasePizza { get; set; }
         public Impasto Impasto { get; set; }
         public List<Aggiunte> Aggiunte { get; set; }
+        public int IdScontrino { get; set; }
+        public static int _IdScontrino = 0;
+
+        public  OrdinePizza() 
+        {
+            IdScontrino =  ++_IdScontrino;
+        }
     }
 }

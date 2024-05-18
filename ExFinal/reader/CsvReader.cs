@@ -41,9 +41,10 @@ namespace ExFinal.reader
                         {
                             BasePizza = basePizza,
                             Impasto = impasto,
-                            Aggiunte = aggiunte
+                            Aggiunte = aggiunte                           
                         };
                         ordini.Add(ordine);
+                        
                     }
                 }
             }

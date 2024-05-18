@@ -12,9 +12,6 @@ namespace ExFinal.handler
     {
         private static int _nextScontrinoId = 1;
 
-        public static int GetNextScontrinoId()
-        {
-            return _nextScontrinoId++;
-        }
+       
     }
 }
