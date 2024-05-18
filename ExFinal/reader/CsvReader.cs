@@ -13,7 +13,6 @@ namespace ExFinal.reader
         private BasePizzaFactory _basePizzaFactory = new BasePizzaFactory();
         private ImpastoFactory _impastoFactory = new ImpastoFactory();
         private AggiunteFactory _aggiunteFactory = new AggiunteFactory();
-
         public CSVReader(string filePath)
         {
             _filePath = filePath;
@@ -25,16 +24,19 @@ namespace ExFinal.reader
             {
                 using (StreamReader reader = new StreamReader(_filePath))
                 {
+                    int lineNumber = 0;
+                    string firstLine = reader.ReadLine();
                     while (!reader.EndOfStream)
                     {
                         string line = reader.ReadLine();
+                        lineNumber++;   
                         string[] parts = line.Split(';');
                         BasePizza basePizza = _basePizzaFactory.CreateBasePizza(parts[0]);
                         Impasto impasto = _impastoFactory.CreateImpasto(parts[1]);
                         List<Aggiunte> aggiunte = parts[2].Split(',')
-                                                          .Select(nome => _aggiunteFactory
-                                                          .CreateAggiunta(nome))
-                                                          .ToList();
+                                                           .Select(nome => nome.Trim())
+                                                           .Select(nome => _aggiunteFactory.CreateAggiunta(nome))
+                                                           .ToList();                            ;                                                  
                         OrdinePizza ordine = new OrdinePizza()
                         {
                             BasePizza = basePizza,
@@ -53,3 +55,4 @@ namespace ExFinal.reader
         }
     }
 }
+ 

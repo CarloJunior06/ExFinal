@@ -13,7 +13,7 @@
 
   <ItemGroup>
     <Content Include="ordini.csv">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
 
