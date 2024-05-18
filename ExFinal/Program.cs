@@ -7,7 +7,7 @@ namespace ExFinal
     {
         static void Main(string[] args)
         {
-            string filePath = "C:\\Users\\manue\\Desktop\\csv\\Orders.txt";
+            string filePath = "ordini.csv";
             CSVReader reader = new CSVReader(filePath);
             List<OrdinePizza> ordini = reader.ReadCSV();
 
