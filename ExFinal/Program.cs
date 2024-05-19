@@ -31,10 +31,10 @@ namespace ExFinal
                     string aggiunte = string.Join(", ", ordine.Aggiunte.Select(a => a.Nome));
                     int idScontrino = ordine.IdScontrino;
                     Console.WriteLine($"Base: {ordine.BasePizza.Nome}, Impasto: {ordine.Impasto.Nome}, Aggiunte: {string.Join(", ", ordine.Aggiunte.Select(a => a.Nome))}, ID Ordine: {ordine.IdScontrino}, Prezzo Totale: {prezzoTotale}");
-                    
-                }
-           
 
+                }
+
+            }
         }
     }
 }
